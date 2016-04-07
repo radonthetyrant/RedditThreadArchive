@@ -6,6 +6,8 @@
 		<testFolder url="file://$MODULE_DIR$/src/de/reddit/archive/tests"/>
 	</contentEntry>
 	<levels>
+		<level name="gson-2.6.2" value="project"/>
+		<level name="okhttp-3.2.0" value="project"/>
 		<level name="JRAW-0.8.0" value="project"/>
 	</levels>
 </component>
