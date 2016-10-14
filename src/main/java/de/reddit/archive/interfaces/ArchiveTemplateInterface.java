@@ -6,4 +6,7 @@ package de.reddit.archive.interfaces;
  * @author radonthetyrant
  */
 public interface ArchiveTemplateInterface {
+
+    String getContent();
+
 }

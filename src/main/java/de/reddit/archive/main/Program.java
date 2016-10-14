@@ -20,6 +20,7 @@ public class Program {
 
         ArchiveThread thread = new ArchiveThread(config);
         String xml = thread.getContents();
+        System.out.println(xml);
 
     }
 

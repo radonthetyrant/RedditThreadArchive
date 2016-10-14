@@ -10,8 +10,15 @@ import net.dean.jraw.models.Submission;
  */
 public class XmlArchiveTemplate implements ArchiveTemplateInterface {
 
+    Submission submission;
 
     public XmlArchiveTemplate(Submission submission) {
+        this.submission = submission;
+    }
 
+    public String getContent() {
+
+
+        return null;
     }
 }

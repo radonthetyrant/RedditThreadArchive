@@ -10,6 +10,9 @@ import de.reddit.archive.view.XmlArchiveTemplate;
 import net.dean.jraw.RedditClient;
 import net.dean.jraw.http.SubmissionRequest;
 import net.dean.jraw.http.UserAgent;
+import net.dean.jraw.http.oauth.Credentials;
+import net.dean.jraw.http.oauth.OAuthData;
+import net.dean.jraw.http.oauth.OAuthException;
 import net.dean.jraw.models.Submission;
 
 import java.io.BufferedReader;
@@ -81,6 +84,15 @@ public class ArchiveThread {
     {
         UserAgent agent = UserAgent.of("Java", "RedditThreadArchive", "0.1", "redditusername"); // @TODO: from config: username, version constant
         RedditClient client = new RedditClient(agent);
+        Credentials credentials = Credentials.script("radonthetyrant", "Zweizwei22", "z0nMvvid75V6Dg", "L9vcn8JdVQUVIUrm8MhoXckRybU");
+        OAuthData auth = null;
+        try {
+            auth = client.getOAuthHelper().easyAuth(credentials);
+        } catch (OAuthException e) {
+            e.printStackTrace();
+        }
+
+        client.authenticate(auth);
         SubmissionRequest.Builder builder = new SubmissionRequest.Builder(id);
         //SubmissionRequest submissionRequest = new SubmissionRequest(builder);
 
